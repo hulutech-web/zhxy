@@ -9,8 +9,12 @@ use Auth;
 
 class HomeController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('auth:sanctum');
+    }
     public function index()
     {
-        return 33;
+        return Auth::user();
     }
 }

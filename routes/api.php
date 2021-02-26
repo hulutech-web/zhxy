@@ -11,8 +11,8 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
 
 Route::get('/captcha', [CaptchaController::class, 'create']);
-
-Route::get('/main', [HomeController::class, 'index']);
+// 访问前台
+Route::get('/main/index', [HomeController::class, 'index']);
 
 Route::apiResource('/school', SchoolController::class);
 

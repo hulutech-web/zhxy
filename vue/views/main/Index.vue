@@ -1,9 +1,14 @@
 <template>
-  <div>MAIN--HOME</div>
+  <div>
+    <top-menu />
+    {{ user }}
+  </div>
 </template>
 
 <script>
+import TopMenu from "@/layouts/components/TopMenu.vue";
 export default {
-  route: { path: "/index" },
+  props: { user: Object },
+  components: { TopMenu },
 };
 </script>
