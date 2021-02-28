@@ -25,8 +25,11 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
+            'real_name'=>$this->faker->word,
             'mobile' => $this->faker->phoneNumber,
             'email' => $this->faker->unique()->safeEmail,
+            'CID'=>$this->faker->unique()->numerify('CID-############'),
+            'attendance_num'=>$this->faker->unique()->numerify('ATD-############'),
             'email_verified_at' => now(),
             'password' => Hash::make('admin888'),
             'remember_token' => Str::random(10),

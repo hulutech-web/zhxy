@@ -15,11 +15,11 @@ const isLogin = Boolean(localStorage.getItem("token"));
 
 //路由拦截（守卫）
 router.beforeEach(async (to, from, next) => {
-    store.commit("setErrors");
+    store.commit("errors");
     if (isLogin) {
         await Promise.all([
-            store.dispatch("getUserInfo"),
-            store.dispatch("getSystemConfig")
+            store.dispatch("user"),
+            // store.dispatch("school")
         ]);
     }
     if (to.matched.some(route => route.meta.auth) && !isLogin) {

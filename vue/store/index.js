@@ -1,3 +1,4 @@
+import axios from "axios";
 import Vue from "vue";
 import Vuex from "vuex";
 
@@ -9,8 +10,11 @@ export default new Vuex.Store({
         errors: {},
         //登录用户
         user: {},
-        //系统配置
-        system: {}
+        // 学校
+        school: {},
+        // 所有用户
+        users:{}
+
     },
     getters: {
         errors: state => name => state.errors[name] && state.errors[name][0],
@@ -19,28 +23,44 @@ export default new Vuex.Store({
         },
         token() {
             return window.localStorage.getItem("token");
+        },
+        school() {
+            return state.school;
+        },
+        user(){
+          return state.user;
+        },
+        users(){
+          return state.users;
         }
     },
     //修改数据时使用，这是一个同步方法，不能在这里执行异步动作
     mutations: {
         //设置验证错误
-        setErrors(state, errors = {}) {
+        errors(state, errors = {}) {
             state.errors = errors;
         },
-        setUser(state, user) {
+        user(state, user) {
             state.user = user;
         },
-        setSystemConfig(state, config) {
-            state.system = config;
-        }
+        users(state, users) {
+            state.users = users;
+        },
+        school(state, school) {
+            state.school = school;
+        },
+
     },
     //用来执行异步动作
     actions: {
-        async getUserInfo({ commit }) {
-            commit("setUser", await axios.get(`user/info`));
+        async user({ commit }) {
+            commit("user", await axios.get(`user/info`));
         },
-        async getSystemConfig({ commit }) {
-            commit("setSystemConfig", await axios.get(`system/config/1`));
+         async school({ commit }) {
+            commit("school", await axios.get(`school`));
+        },
+        async users({ commit }) {
+            commit("users", await axios.get(`user`));
         }
     }
 });

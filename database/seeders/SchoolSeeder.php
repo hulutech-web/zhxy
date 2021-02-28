@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\School;
 use Illuminate\Database\Seeder;
 
 class SchoolSeeder extends Seeder
@@ -13,6 +14,13 @@ class SchoolSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $users = School::create([
+            'name' => 'demo',
+            'domain' => 'http://yhdengdeng.net',
+            'description' => '测试',
+            'user_id' => 1,
+            'tel' => '18090900234',
+            'email' => '18090900233@qq.com',
+        ]);
     }
 }

@@ -19,9 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->nullable()->unique();
             $table->string('mobile')->nullable()->unique()->comment('手机号');
             $table->string('password')->comment('密码');
-            $table->string('real_name', 20)->nullable()->comment('真实姓名');
+            $table->string('real_name', 50)->nullable()->comment('真实姓名');
             $table->string('avatar')->nullable()->comment('头像');
-            $table->char('CID', 18)->nullable()->unique()->comment('身份证号');
+            $table->string('CID')->nullable()->unique()->comment('身份证号');
             $table->string('attendance_num')->nullable()->comment('门禁卡号');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

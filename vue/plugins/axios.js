@@ -54,7 +54,7 @@ _axios.interceptors.response.use(
 
         switch (status) {
             case 422:
-                store.commit("setErrors", errors);
+                store.commit("errors", errors);
                 break;
             case 401:
                 location.href = "/login";

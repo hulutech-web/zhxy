@@ -1,7 +1,9 @@
 <template>
   <div>
     <top-menu />
-    <router-view />
+    <el-card>
+      <router-view />
+    </el-card>
   </div>
 </template>
 
