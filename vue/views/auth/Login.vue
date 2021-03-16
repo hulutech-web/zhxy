@@ -106,30 +106,30 @@
 
 <script>
 export default {
-  route: { path: "/login", meta: { guest: true } },
+  route: { path: '/login', meta: { guest: true } },
   data() {
     return {
       form: {
-        mobile: "18090900235",
-        password: "admin888",
+        mobile: '18090900235',
+        password: 'admin888',
         captcha: {},
         remember: false,
       },
-    };
+    }
   },
   methods: {
     onSubmit() {
       this.axios
-        .post("login", this.form)
+        .post('login', this.form)
         .then(({ token }) => {
           //本地缓存的TOKEN
-          localStorage.setItem("token", token);
-          location.href = "/";
+          localStorage.setItem('token', token)
+          location.href = 'school/school/index'
         })
-        .finally((_) => this.$refs.captcha.get());
+        .finally((_) => this.$refs.captcha.get())
     },
   },
-};
+}
 </script>
 
 <style></style>

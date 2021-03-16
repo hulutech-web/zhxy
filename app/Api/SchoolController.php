@@ -27,7 +27,7 @@ class SchoolController extends Controller
         return new SchoolResource($school);
     }
 
-    public function store(Request $request, School $school)
+    public function store(SchoolRequest $request, School $school)
     {
         $school->fill($request->input());
         $school->user_id = Auth::id();
@@ -43,8 +43,9 @@ class SchoolController extends Controller
     }
 
 
-    public function destroy(Request $request, School $school) {
+    public function destroy(Request $request, School $school)
+    {
         $school->delete();
-        return ['message' => '学校修改成功'];
+        return ['message' => '学校删除成功'];
     }
 }

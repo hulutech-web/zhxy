@@ -26,6 +26,7 @@ class CreateSchoolsTable extends Migration
             $table->string('icp', 100)->nullable()->comment('ICP');
             $table->string('tel', 30)->nullable()->comment('对公电话');
             $table->string('email')->nullable()->comment('对公邮箱');
+            $table->integer('rate')->default(0)->nullable()->comment('学校评分');
             $table->timestamps();
         });
     }

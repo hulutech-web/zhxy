@@ -12,9 +12,6 @@ export default new Vuex.Store({
         user: {},
         // 学校
         school: {},
-        // 所有用户
-        users:{}
-
     },
     getters: {
         errors: state => name => state.errors[name] && state.errors[name][0],
@@ -30,9 +27,6 @@ export default new Vuex.Store({
         user(){
           return state.user;
         },
-        users(){
-          return state.users;
-        }
     },
     //修改数据时使用，这是一个同步方法，不能在这里执行异步动作
     mutations: {
@@ -43,9 +37,6 @@ export default new Vuex.Store({
         user(state, user) {
             state.user = user;
         },
-        users(state, users) {
-            state.users = users;
-        },
         school(state, school) {
             state.school = school;
         },
@@ -54,13 +45,10 @@ export default new Vuex.Store({
     //用来执行异步动作
     actions: {
         async user({ commit }) {
-            commit("user", await axios.get(`user/info`));
+            commit("user", await axios.get(`/user/info`));
         },
-         async school({ commit }) {
+        async school({ commit }) {
             commit("school", await axios.get(`school`));
         },
-        async users({ commit }) {
-            commit("users", await axios.get(`user`));
-        }
     }
 });

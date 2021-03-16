@@ -26,7 +26,6 @@ class SchoolRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => $this->id,
             'name' => ['required', 'min:3', Rule::unique('schools')->ignore(request('school'))],
             'domain' => ['required', 'url'],
             'tel' => ['required'],
@@ -39,7 +38,8 @@ class SchoolRequest extends FormRequest
             'domain' => '站点域名',
             'name' => '学校名称',
             'tel' => '对公电话',
-            'email' => '电子邮箱'
+            'email' => '电子邮箱',
+            'rate' => '评分'
         ];
     }
 }

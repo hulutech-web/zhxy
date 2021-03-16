@@ -17,7 +17,7 @@ class SchoolResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'user' => Auth::user(),
+            'user_id' => Auth::id(),
             'name' => $this->name,
             'domain' => $this->domain,
             'description' => $this->description,
@@ -25,6 +25,7 @@ class SchoolResource extends JsonResource
             'icp' => $this->icp,
             'tel' => $this->tel,
             'email' => $this->email,
+            'rate' => $this->rate,
             'students' => $this->students(),
             'created_at' => $this->created_at
         ];
