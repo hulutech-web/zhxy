@@ -7,7 +7,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -140,6 +140,7 @@
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/filp/whoops" />
       <path value="$PROJECT_DIR$/vendor/mews/captcha" />
+      <path value="$PROJECT_DIR$/vendor/overtrue/easy-sms" />
     </include_path>
   </component>
   <component name="ProjectId" id="1p66f5g6foNsMgbNxxRjWbF9dWB" />
@@ -182,6 +183,8 @@
       <option name="presentableId" value="Default" />
       <updated>1614491292742</updated>
       <workItem from="1614491294506" duration="42579000" />
+      <workItem from="1615978367546" duration="1369000" />
+      <workItem from="1616061399703" duration="17166000" />
     </task>
     <servers />
   </component>
@@ -197,9 +200,10 @@
       <screen x="0" y="25" width="1920" height="948" />
     </state>
     <state width="500" height="444" key="SwitcherDM/0.25.1920.948@0.25.1920.948" timestamp="1614534925666" />
-    <state x="492" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1614539059167">
-      <screen x="0" y="25" width="1920" height="948" />
+    <state x="492" y="252" width="670" height="682" key="search.everywhere.popup" timestamp="1616091425164">
+      <screen x="0" y="25" width="1920" height="956" />
     </state>
     <state x="492" y="250" width="670" height="676" key="search.everywhere.popup/0.25.1920.948@0.25.1920.948" timestamp="1614539059167" />
+    <state x="492" y="252" width="670" height="682" key="search.everywhere.popup/0.25.1920.956@0.25.1920.956" timestamp="1616091425164" />
   </component>
 </project>

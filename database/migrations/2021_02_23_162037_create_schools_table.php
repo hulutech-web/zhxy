@@ -18,8 +18,6 @@ class CreateSchoolsTable extends Migration
             $table->char('name', 30)->unique()->comment('学校名称');
             $table->char('domain', 50)->unique()->comment('域名');
             $table->json('config')->nullable()->comment('学校配置');
-            // $table->foreignId('module_id')->nullable()->constrained()->onDelete("SET NULL")->comment('默认模块');
-            // $table->foreignId('template_id')->nullable()->constrained()->onDelete("SET NULL")->comment('默认模板');
             $table->foreignId('user_id')->constrained()->onDelete("cascade")->comment('超管');
             $table->string('description', 100)->nullable()->comment('学校描述');
             $table->string('logo')->nullable()->comment('LOGO');

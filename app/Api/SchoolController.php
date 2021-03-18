@@ -31,6 +31,7 @@ class SchoolController extends Controller
     {
         $school->fill($request->input());
         $school->user_id = Auth::id();
+        $school->users()->sync($request->users);
         $school->save();
         return ['message' => '学校添加成功'];
     }
@@ -39,6 +40,7 @@ class SchoolController extends Controller
     public function update(Request $request, School $school)
     {
         $school->fill($request->input())->save();
+        $school->users()->sync($request->users);
         return ['message' => '学校修改成功'];
     }
 

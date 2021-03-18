@@ -15,13 +15,16 @@ class School extends Model
         'config' => 'json',
     ];
 
-    public function students()
-    {
-        return $this->hasMany(Student::class, 'school_student');
-    }
-
     public function adminUser()
     {
         return $this->belongsTo(User::class, 'users');
+    }
+
+    /**
+     * 定义用户关联
+     *
+     */
+    public function users(){
+        return $this->belongsToMany(User::class,'school_user')->withTimestamps();
     }
 }
